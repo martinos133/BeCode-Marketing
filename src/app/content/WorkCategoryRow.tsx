@@ -28,6 +28,31 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
     };
   }, [expandedVideo]);
 
+  // Videá sa vždy prehrávajú, keď sú viditeľné v viewporte
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const videos = container.querySelectorAll<HTMLVideoElement>("video");
+    if (videos.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { root: null, rootMargin: "80px", threshold: 0.15 }
+    );
+
+    videos.forEach((v) => observer.observe(v));
+    return () => videos.forEach((v) => observer.unobserve(v));
+  }, [category]);
+
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const el = scrollRef.current;
