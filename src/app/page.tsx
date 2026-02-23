@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { OrganickyRastChart } from "@/components/OrganickyRastChart";
 
 export default function Home() {
   const [expandedVideo, setExpandedVideo] = useState<string | null>(null);
@@ -356,41 +357,8 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
             {/* Ľavá sekcia – 3 grafy v štýle GSC */}
             <div className="space-y-6">
-              {/* Graf 1: Organický rast návštevnosti */}
-              <div className="rounded-xl border border-white/10 bg-[#262626] p-5 shadow-lg">
-                <p className="text-[11px] font-medium uppercase tracking-wider text-[#A0A0A0]">
-                  Google Search Console
-                </p>
-                <h3 className="mt-1 text-lg font-bold italic text-white md:text-xl">
-                  Organický rast návštevnosti
-                </h3>
-                <div className="relative mt-4">
-                  <div className="absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded bg-[#ffb400]/20 text-[#ffb400]">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                      <polyline points="17 6 23 6 23 12" />
-                    </svg>
-                  </div>
-                  <div className="flex items-end justify-between gap-1" style={{ height: "120px" }}>
-                    {[42, 48, 55, 58, 68, 85, 100].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-t min-w-0 transition-opacity hover:opacity-90"
-                        style={{
-                          height: `${h}%`,
-                          backgroundColor: i >= 4 ? "#ffb400" : "#3A4D67",
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div className="mt-4 grid grid-cols-4 gap-3">
-                    <div><p className="text-[10px] text-[#A0A0A0]">IMPRESIE</p><p className="mt-0.5 text-base font-bold text-white">+450%</p></div>
-                    <div><p className="text-[10px] text-[#A0A0A0]">KLIKNUTIA</p><p className="mt-0.5 text-base font-bold text-white">+320%</p></div>
-                    <div><p className="text-[10px] text-[#A0A0A0]">POZÍCIE 1-3</p><p className="mt-0.5 text-base font-bold text-white">154</p></div>
-                    <div><p className="text-[10px] text-[#A0A0A0]">CTR</p><p className="mt-0.5 text-base font-bold text-[#ffb400]">5.2%</p></div>
-                  </div>
-                </div>
-              </div>
+              {/* Graf 1: Organický rast návštevnosti – radial */}
+              <OrganickyRastChart />
 
               {/* Graf 2: Kľúčové slová a pozície */}
               <div className="rounded-xl border border-white/10 bg-[#262626] p-5 shadow-lg">
