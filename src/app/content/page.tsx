@@ -71,53 +71,85 @@ export default function ContentPage() {
         </div>
       </section>
 
-      {/* Naše Služby */}
-      <section className="px-6 py-16 md:py-24">
+      {/* Naše Služby – nadpriemerne moderný blok */}
+      <section className="relative px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <h2 className="inline-block text-3xl font-bold text-white">
+          <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-[#ffb400]/90">
+            Čo ponúkame
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Naše Služby
-            <span className="mt-2 block h-1 w-16 bg-[#ffb400]" />
           </h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-3 h-px w-14 bg-[#ffb400]" />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {[
               {
                 icon: "play",
-                title: "Short-form video",
+                title: "Short-form Video Produkcia",
                 description:
-                  "TikTok, Reels, Shorts – formáty, ktoré držia pozornosť. Od nápadu po finálny strih a optimalizáciu pre platformy.",
-                bullets: ["Kreatívny koncept", "Produkcia a strih", "A/B titulky a thumbnaily"],
+                  "Tvoríme obsah, ktorý nezapadne prachom. Reels a TikToky, ktoré zastavia scrollovanie a premenia divákov na komunitu.",
+                bullets: [
+                  "Kreatívny koncept & Skripty: Navrhneme nápady, ktoré majú virálny potenciál.",
+                  "Profesionálny strih: Dynamika, zvukové efekty a titulky optimalizované pre pozornosť.",
+                  "Hook & Retention stratégia: Zabezpečíme, aby diváci dopozerali video až do konca.",
+                ],
               },
               {
                 icon: "chart",
-                title: "Stratégia na mieru",
+                title: "Strategický Social Management",
                 description:
-                  "Dátami riadený obsahový plán a content pillar stratégia. Vieme, čo funguje vo vašom odvetví.",
-                bullets: ["Content audit", "Editoriálny kalendár", "KPI a reporty"],
+                  "Vaše sociálne siete už nebudú len o náhodných príspevkoch. Postavíme vám základy, na ktorých sa dá rásť.",
+                bullets: [
+                  "Content Audit: Analýza toho, čo vo vašom odvetví skutočne funguje.",
+                  "Editoriálny kalendár: Jasný plán príspevkov, ktorý vám ušetrí čas a stres.",
+                  "Vizuálna identita feedu: Estetika, ktorá na prvý pohľad kričí profesionalitou.",
+                ],
               },
               {
                 icon: "community",
-                title: "Community Management",
+                title: "Community & Growth",
                 description:
-                  "Budovanie komunity okolo značky. Od moderácie po konverzačné kampane a UGC.",
-                bullets: ["Moderácia", "Odpovede a DM", "UGC kampane"],
+                  "Budujeme vzťahy, nielen čísla. Postaráme sa o to, aby váš profil žil a komunikoval.",
+                bullets: [
+                  "Aktívna moderácia: Odpovede na komentáre a správy v tóne vašej značky.",
+                  "Engagement stratégia: Proaktívne vyhľadávanie vašej cieľovej skupiny.",
+                  "UGC Kampane: Využitie obsahu od používateľov pre maximálnu dôveryhodnosť.",
+                ],
+              },
+              {
+                icon: "ads",
+                title: "Výkonnostný Content (Ads)",
+                description:
+                  "Kreatíva, ktorá neprináša len lajky, ale predaje. Optimalizujeme obsah pre platenú reklamu.",
+                bullets: [
+                  "Ad-creative špeciál: Videá navrhnuté špeciálne pre Meta a TikTok Ads.",
+                  "A/B Testovanie: Hľadáme víťazné formáty s najlepším konverzným pomerom.",
+                  "Analýza dát: Každé euro investované do reklamy musí dávať zmysel.",
+                ],
               },
             ].map((card, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-white/10 bg-[#1a1a1a] p-6 transition hover:border-[#ffb400]/30"
+                className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-transparent p-8 shadow-lg transition-all duration-300 hover:border-[#ffb400]/20 hover:shadow-[0_0_40px_-12px_rgba(255,180,0,0.15)] md:p-9"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#ffb400]/20 text-[#ffb400]">
+                <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#ffb400]/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#ffb400]/20 bg-[#ffb400]/5 text-[#ffb400] transition-colors duration-300 group-hover:border-[#ffb400]/40 group-hover:bg-[#ffb400]/10">
                   {card.icon === "play" && <PlayIcon />}
                   {card.icon === "chart" && <ChartIcon />}
                   {card.icon === "community" && <CommunityIcon />}
+                  {card.icon === "ads" && <AdsIcon />}
                 </div>
-                <h3 className="mt-4 text-xl font-bold text-white">{card.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/80">{card.description}</p>
-                <ul className="mt-4 space-y-2">
+                <h3 className="mt-6 text-xl font-semibold tracking-tight text-white md:text-[1.35rem]">
+                  {card.title}
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-base md:leading-[1.75]">
+                  {card.description}
+                </p>
+                <ul className="mt-6 space-y-4 border-t border-white/[0.06] pt-6">
                   {card.bullets.map((b, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-white">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#ffb400]" />
-                      {b}
+                    <li key={j} className="flex items-start gap-3 text-sm leading-relaxed text-white/90 md:text-base md:leading-[1.7]">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ffb400]" />
+                      <span>{b}</span>
                     </li>
                   ))}
                 </ul>
@@ -434,6 +466,15 @@ function CommunityIcon() {
       <circle cx="9" cy="7" r="4" />
       <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
       <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+
+function AdsIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+      <polyline points="17 6 23 6 23 12" />
     </svg>
   );
 }
