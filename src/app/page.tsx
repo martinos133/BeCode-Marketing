@@ -354,93 +354,200 @@ export default function Home() {
       <section className="border-t border-white/5 px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-            {/* Ľavá sekcia – graf a metriky */}
-            <div className="rounded-xl border border-white/10 bg-[#262626] p-6 shadow-lg">
-              <p className="text-xs font-medium uppercase tracking-wider text-[#A0A0A0]">
-                GOOGLE SEARCH CONSOLE
-              </p>
-              <h3 className="mt-1 text-xl font-bold italic text-white md:text-2xl">
-                Organický rast návštevnosti
-              </h3>
-              <div className="relative mt-6">
-                {/* Ikona trendu vpravo hore */}
-                <div className="absolute right-0 top-0 flex h-8 w-8 items-center justify-center rounded bg-[#ffb400]/20 text-[#ffb400]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                  </svg>
+            {/* Ľavá sekcia – 3 grafy v štýle GSC */}
+            <div className="space-y-6">
+              {/* Graf 1: Organický rast návštevnosti */}
+              <div className="rounded-xl border border-white/10 bg-[#262626] p-5 shadow-lg">
+                <p className="text-[11px] font-medium uppercase tracking-wider text-[#A0A0A0]">
+                  Google Search Console
+                </p>
+                <h3 className="mt-1 text-lg font-bold italic text-white md:text-xl">
+                  Organický rast návštevnosti
+                </h3>
+                <div className="relative mt-4">
+                  <div className="absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded bg-[#ffb400]/20 text-[#ffb400]">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                      <polyline points="17 6 23 6 23 12" />
+                    </svg>
+                  </div>
+                  <div className="flex items-end justify-between gap-1" style={{ height: "120px" }}>
+                    {[42, 48, 55, 58, 68, 85, 100].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-t min-w-0 transition-opacity hover:opacity-90"
+                        style={{
+                          height: `${h}%`,
+                          backgroundColor: i >= 4 ? "#ffb400" : "#3A4D67",
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div className="mt-4 grid grid-cols-4 gap-3">
+                    <div><p className="text-[10px] text-[#A0A0A0]">IMPRESIE</p><p className="mt-0.5 text-base font-bold text-white">+450%</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">KLIKNUTIA</p><p className="mt-0.5 text-base font-bold text-white">+320%</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">POZÍCIE 1-3</p><p className="mt-0.5 text-base font-bold text-white">154</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">CTR</p><p className="mt-0.5 text-base font-bold text-[#ffb400]">5.2%</p></div>
+                  </div>
                 </div>
-                {/* Pruhový graf: 4 modré + 3 žlté (výška rastie) */}
-                <div className="flex items-end justify-between gap-1.5" style={{ height: "160px" }}>
-                  {[
-                    { h: 45, color: "#3A4D67" },
-                    { h: 50, color: "#3A4D67" },
-                    { h: 48, color: "#3A4D67" },
-                    { h: 52, color: "#3A4D67" },
-                    { h: 65, color: "#ffb400" },
-                    { h: 82, color: "#ffb400" },
-                    { h: 100, color: "#ffb400" },
-                  ].map((bar, i) => (
-                    <div
-                      key={i}
-                      className="flex-1 rounded-t min-w-0"
-                      style={{
-                        height: `${bar.h}%`,
-                        backgroundColor: bar.color,
-                      }}
-                    />
-                  ))}
+              </div>
+
+              {/* Graf 2: Kľúčové slová a pozície */}
+              <div className="rounded-xl border border-white/10 bg-[#262626] p-5 shadow-lg">
+                <p className="text-[11px] font-medium uppercase tracking-wider text-[#A0A0A0]">
+                  Kľúčové slová
+                </p>
+                <h3 className="mt-1 text-lg font-bold italic text-white md:text-xl">
+                  Pozície v TOP 10
+                </h3>
+                <div className="relative mt-4">
+                  <div className="flex items-end justify-between gap-1" style={{ height: "120px" }}>
+                    {[35, 52, 61, 72, 88, 95, 100].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-t min-w-0"
+                        style={{
+                          height: `${h}%`,
+                          backgroundColor: i >= 3 ? "#ffb400" : "#4A5568",
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div className="mt-4 grid grid-cols-4 gap-3">
+                    <div><p className="text-[10px] text-[#A0A0A0]">TOP 3</p><p className="mt-0.5 text-base font-bold text-white">89</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">TOP 10</p><p className="mt-0.5 text-base font-bold text-white">247</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">NOVÉ KWs</p><p className="mt-0.5 text-base font-bold text-[#ffb400]">+31</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">Rast YoY</p><p className="mt-0.5 text-base font-bold text-white">+186%</p></div>
+                  </div>
                 </div>
-                {/* Metriky pod grafom */}
-                <div className="mt-6 grid grid-cols-4 gap-4">
-                  <div>
-                    <p className="text-xs text-[#A0A0A0]">IMPRESIE</p>
-                    <p className="mt-0.5 text-lg font-bold text-white">+450%</p>
+              </div>
+
+              {/* Graf 3: Technická zdravotná karta */}
+              <div className="rounded-xl border border-white/10 bg-[#262626] p-5 shadow-lg">
+                <p className="text-[11px] font-medium uppercase tracking-wider text-[#A0A0A0]">
+                  Core Web Vitals
+                </p>
+                <h3 className="mt-1 text-lg font-bold italic text-white md:text-xl">
+                  Rýchlosť a zdravie stránok
+                </h3>
+                <div className="relative mt-4">
+                  <div className="flex items-end justify-between gap-1" style={{ height: "120px" }}>
+                    {[70, 78, 85, 88, 92, 96, 100].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-t min-w-0"
+                        style={{
+                          height: `${h}%`,
+                          backgroundColor: i >= 4 ? "#22c55e" : "#3B82F6",
+                        }}
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="text-xs text-[#A0A0A0]">KLIKNUTIA</p>
-                    <p className="mt-0.5 text-lg font-bold text-white">+320%</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-[#A0A0A0]">POZÍCIE 1-3</p>
-                    <p className="mt-0.5 text-lg font-bold text-white">154</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-[#A0A0A0]">NÁVRATNOSŤ</p>
-                    <p className="mt-0.5 text-lg font-bold text-white">∞ ROAS</p>
+                  <div className="mt-4 grid grid-cols-4 gap-3">
+                    <div><p className="text-[10px] text-[#A0A0A0]">LCP</p><p className="mt-0.5 text-base font-bold text-white">1.2s</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">FID</p><p className="mt-0.5 text-base font-bold text-white">32ms</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">CLS</p><p className="mt-0.5 text-base font-bold text-emerald-400">0.04</p></div>
+                    <div><p className="text-[10px] text-[#A0A0A0]">SKÓRE</p><p className="mt-0.5 text-base font-bold text-[#ffb400]">94</p></div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* Pravá sekcia – nadpis a zoznam */}
+            {/* Pravá sekcia – SEO obsah */}
             <div className="flex flex-col justify-center">
               <h2 className="text-3xl font-bold uppercase leading-tight text-white md:text-4xl">
                 VIDITEĽNOSŤ, KTORÁ{" "}
                 <span className="text-[#ffb400]">NEKONČÍ</span>{" "}
                 VYPNUTÍM KREDITU
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-white">
-                Zatiaľ čo PPC vám prináša okamžité výsledky, SEO buduje váš digitálny majetok.
-                Investícia do organického rastu sa vám bude vracať roky po tom, čo sme prácu
-                dokončili.
+              <p className="mt-4 text-lg font-medium text-white/95">
+                SEO: Budujte digitálny majetok, ktorý pracuje pre vás 24/7.
               </p>
-              <ul className="mt-6 space-y-4">
-                {[
-                  "E-commerce optimalizácia pre Shoptet & Shopify",
-                  "Technické SEO a Core Web Vitals",
-                  "Strategický Content Marketing",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white">
-                    <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ffb400] text-xs text-[#1a1a1a]"
-                      aria-hidden
-                    >
-                      ✓
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+              <p className="mt-4 text-[15px] leading-[1.75] text-white/85">
+                Zatiaľ čo PPC je šprint, ktorý prináša výsledky okamžite, SEO je maratón, ktorý
+                ovláda trh. Investícia do organického vyhľadávania je investíciou do dlhodobej
+                hodnoty vašej firmy. Naším cieľom je dostať vás na popredné miesta tam, kde vás
+                zákazníci prirodzene hľadajú – bez toho, aby ste museli platiť za každý jeden
+                preklik.
+              </p>
+              <h3 className="mt-8 text-base font-semibold text-white md:text-lg">
+                Naše SEO piliere pre váš stabilný rast:
+              </h3>
+              <ul className="mt-4 space-y-5">
+                <li>
+                  <p className="font-medium text-white">
+                    Optimalizácia e-shopov na mieru aj na platformách
+                  </p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/75">
+                    Či už prevádzkujete e-shop na Shoptete, Shopify, alebo máte komplexný systém
+                    vyvinutý na mieru, vieme ho nastaviť tak, aby ho algoritmy milovali.
+                    Optimalizujeme štruktúru kategórií, produktové karty a proces nákupu pre
+                    maximálny výkon.
+                  </p>
+                </li>
+                <li>
+                  <p className="font-medium text-white">Technické SEO a Core Web Vitals</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/75">
+                    Váš e-shop musí byť bleskovo rýchly a technicky bezchybný. Odstránime chyby v
+                    kóde, zrýchlime načítavanie stránok a zabezpečíme, aby technická stránka webu
+                    nebrzdila váš predajný potenciál.
+                  </p>
+                </li>
+                <li>
+                  <p className="font-medium text-white">Strategický Content Marketing</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/75">
+                    Tvoríme obsah, ktorý predáva. Na základe analýzy kľúčových slov zaplníme váš
+                    e-shop textami a blogmi, ktoré budujú dôveru, odpovedajú na otázky zákazníkov a
+                    dlhodobo priťahujú relevantnú návštevnosť.
+                  </p>
+                </li>
+                <li>
+                  <p className="font-medium text-white">Budovanie autority (Linkbuilding)</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/75">
+                    Získame pre váš e-shop kvalitné spätné odkazy z relevantných zdrojov. Tým dáme
+                    vyhľadávačom jasný signál, že ste lídrom vo svojom odbore, čo vás posunie pred
+                    konkurenciu.
+                  </p>
+                </li>
               </ul>
+              <h3 className="mt-8 text-base font-semibold text-white md:text-lg">
+                Prečo investovať do SEO s BeCode?
+              </h3>
+              <ul className="mt-4 space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ffb400] text-xs text-[#1a1a1a]">
+                    ✓
+                  </span>
+                  <span className="text-sm leading-relaxed text-white/90">
+                    <strong className="text-white">Trvalý prísun zákazníkov:</strong> Keď raz
+                    obsadíte popredné priečky, návštevnosť k vám prúdi prirodzene aj mesiace po tom,
+                    čo sme prácu dokončili.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ffb400] text-xs text-[#1a1a1a]">
+                    ✓
+                  </span>
+                  <span className="text-sm leading-relaxed text-white/90">
+                    <strong className="text-white">Sila organického rastu:</strong> Znížte svoju
+                    závislosť na platených reklamách. SEO zabezpečí, že váš biznis bude rásť, aj keď
+                    práve nebeží žiadna kampaň.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ffb400] text-xs text-[#1a1a1a]">
+                    ✓
+                  </span>
+                  <span className="text-sm leading-relaxed text-white/90">
+                    <strong className="text-white">Kvalitnejšie konverzie:</strong> Návštevníci z
+                    organického vyhľadávania majú často vyššiu mieru dôvery, pretože vás našli na
+                    základe vašej odbornosti a relevancie.
+                  </span>
+                </li>
+              </ul>
+              <blockquote className="mt-8 border-l-2 border-[#ffb400]/70 pl-5 text-[15px] leading-[1.7] italic text-white/85">
+                „PPC vám prinesie návštevníkov na dnes, SEO vám vybuduje silný e-shop na roky
+                dopredu.“
+              </blockquote>
             </div>
           </div>
         </div>
