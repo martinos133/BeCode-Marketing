@@ -131,9 +131,11 @@ export default function ContentPage() {
               category="Gastro"
               images={[
                 { video: "/InFestaConTavolo_Reels_Prew_01.mp4", alt: "Gastro video" },
-                { src: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop", alt: "Raňajky" },
-                { src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop", alt: "Jedlo" },
+                { video: "/Burrata_Recept_Reel_03.mp4", alt: "Burrata recept" },
+                { video: encodeURI("/🤩 TIRAMISU DI PISTACCHIO PODĽA TAVOLO 🔥👉 Potrebuješ-500g mascarpone 5-6 žĺtkov 3-4 lyžice kry.mp4"), alt: "Tiramisu di Pistacchio" },
                 { src: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=400&h=400&fit=crop", alt: "Gastro projekt" },
+                { video: "/reelsko_chaos_final.mp4", alt: "Reelsko chaos" },
+                { video: "/Platz_DomUmenia_Reel_01.mp4", alt: "Platz Dom Umenia" },
               ]}
             />
             <WorkCategoryRow

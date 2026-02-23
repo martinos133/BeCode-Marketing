@@ -30,8 +30,23 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
-    const width = scrollRef.current.clientWidth;
-    scrollRef.current.scrollBy({ left: dir === "left" ? -width : width, behavior: "smooth" });
+    const el = scrollRef.current;
+    const firstChild = el.querySelector("[data-carousel-item]") as HTMLElement | null;
+    const itemWidth = firstChild ? firstChild.offsetWidth + 16 : 400; // 16px gap
+    const step = dir === "left" ? -itemWidth : itemWidth;
+    const maxScroll = el.scrollWidth - el.clientWidth;
+
+    if (maxScroll <= 0) return;
+
+    const newScroll = el.scrollLeft + step;
+
+    if (newScroll >= maxScroll - 1) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else if (newScroll <= 0) {
+      el.scrollTo({ left: maxScroll, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: step, behavior: "smooth" });
+    }
   };
 
   return (
@@ -77,6 +92,7 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
           {images.map((item, i) => (
             <div
               key={i}
+              data-carousel-item
               className={`relative h-80 w-80 shrink-0 overflow-hidden rounded-lg bg-zinc-800 md:h-96 md:w-96 ${"video" in item ? "cursor-pointer" : ""}`}
               style={{ scrollSnapAlign: "start" }}
               onClick={() => "video" in item && setExpandedVideo(item.video)}
