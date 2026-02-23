@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GaleriaGallery } from "./GaleriaGallery";
 import { IgFeedyGallery } from "./IgFeedyGallery";
 import { WorkCategoryRow } from "./WorkCategoryRow";
 
@@ -134,7 +135,8 @@ export default function ContentPage() {
             <WorkCategoryRow
               category="Gastro"
               images={[
-                { video: "/Burrata_Recept_Reel_03.mp4", alt: "Gastro video" },
+                { video: "/InFestaConTavolo_Reels_Prew_01.mp4", alt: "Gastro video" },
+                { video: "/Burrata_Recept_Reel_03.mp4", alt: "Burrata recept" },
                 { video: encodeURI("/🤩 TIRAMISU DI PISTACCHIO PODĽA TAVOLO 🔥👉 Potrebuješ-500g mascarpone 5-6 žĺtkov 3-4 lyžice kry.mp4"), alt: "Tiramisu di Pistacchio" },
                 { video: "/Slavia_Drink_01.mp4", alt: "Slavia Drink" },
                 { video: "/reelsko_chaos_final.mp4", alt: "Reelsko chaos" },
@@ -149,6 +151,7 @@ export default function ContentPage() {
               images={[
                 { video: encodeURI("/sport/A ako riešiš problém preplnených fitiek ty 🤣💪.mp4"), alt: "Fitky" },
                 { video: "/sport/Captions_26E160.MP4", alt: "Šport video" },
+                { video: "/sport/Captions_FC6C84.MP4", alt: "Šport video" },
                 { video: "/sport/Chlapi_Reel_01.mp4", alt: "Chlapi Reel" },
                 { video: encodeURI("/sport/Stále trčíš v tom istom fitku Čo tak zmena 🤔Fitcentrum Šport je obľúbené fitko v centre mesta. .mp4"), alt: "Fitcentrum Šport" },
                 { video: encodeURI("/sport/Tento typ ľudí 🤣😤.mp4"), alt: "Fitko" },
@@ -212,6 +215,28 @@ export default function ContentPage() {
                 Ukážky našich feedov
               </p>
               <IgFeedyGallery />
+            </div>
+
+            {/* Podkategória: Galéria */}
+            <div className="overflow-hidden rounded-2xl border border-[#ffb400]/20 bg-gradient-to-br from-zinc-900 to-zinc-900/80 p-8 md:p-10 shadow-xl shadow-black/30">
+              <div className="mb-2 inline-block">
+                <h3 className="text-2xl font-bold uppercase tracking-tight text-white md:text-3xl">
+                  Galéria: momenty, ktoré hovoria za vás
+                </h3>
+                <span className="mt-2 block h-0.5 w-20 bg-[#ffb400]" />
+              </div>
+              <div className="mt-6 max-w-2xl space-y-4">
+                <p className="text-base leading-relaxed text-zinc-300 md:text-lg">
+                  Fotografia je viac než len statický obraz. Je to emócia zachytená v správnej
+                  milisekunde, detail produktu, ktorý vás prinúti dotknúť sa obrazovky, a atmosféra,
+                  ktorú netreba popisovať slovami.
+                </p>
+                <p className="text-base leading-relaxed text-zinc-300 md:text-lg">
+                  Od precíznej produktovej fotografie až po autentické lifestyle zábery – tvoríme
+                  vizuálny obsah, ktorý dýcha.
+                </p>
+              </div>
+              <GaleriaGallery />
             </div>
           </div>
         </div>

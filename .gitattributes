@@ -1,0 +1,4 @@
+# Git LFS - large video files (GitHub 100MB limit)
+public/sport/Captions_FC6C84.MP4 filter=lfs diff=lfs merge=lfs -text
+public/BeCode Hero Trailer_4K_V2.mov filter=lfs diff=lfs merge=lfs -text
+public/InFestaConTavolo_Reels_Prew_01.mp4 filter=lfs diff=lfs merge=lfs -text

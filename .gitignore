@@ -39,8 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Large video files (GitHub 100MB limit) – host on CDN/Vercel Blob
-public/sport/Captions_FC6C84.MP4
-public/BeCode Hero Trailer_4K_V2.mov
-public/InFestaConTavolo_Reels_Prew_01.mp4
