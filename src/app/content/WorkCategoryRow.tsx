@@ -31,23 +31,25 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const el = scrollRef.current;
-    const firstChild = el.querySelector("[data-carousel-item]") as HTMLElement | null;
-    const itemWidth = firstChild ? firstChild.offsetWidth + 16 : 400; // 16px = gap
-    const step = dir === "left" ? -itemWidth : itemWidth;
-    const maxScroll = el.scrollWidth - el.clientWidth;
+    const items = el.querySelectorAll<HTMLElement>("[data-carousel-item]");
+    if (items.length === 0) return;
 
+    const gap = 16;
+    const itemWidth = items[0].offsetWidth + gap;
+    const maxScroll = el.scrollWidth - el.clientWidth;
     if (maxScroll <= 0) return;
 
-    const newScroll = el.scrollLeft + step;
+    const currentIndex = Math.min(
+      Math.floor((el.scrollLeft + 10) / itemWidth),
+      items.length - 1
+    );
+    let targetIndex = dir === "right" ? currentIndex + 1 : currentIndex - 1;
 
-    // Obaliť len keď skutočne prekročíme hranicu – inak normálne scrollovať
-    if (dir === "right" && newScroll > maxScroll) {
-      el.scrollTo({ left: 0, behavior: "smooth" });
-    } else if (dir === "left" && newScroll < 0) {
-      el.scrollTo({ left: maxScroll, behavior: "smooth" });
-    } else {
-      el.scrollBy({ left: step, behavior: "smooth" });
-    }
+    if (targetIndex >= items.length) targetIndex = 0;
+    else if (targetIndex < 0) targetIndex = items.length - 1;
+
+    const targetScroll = Math.min(targetIndex * itemWidth, maxScroll);
+    el.scrollTo({ left: targetScroll, behavior: "smooth" });
   };
 
   return (
@@ -84,11 +86,11 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
       )}
 
       <h3 className="mb-4 text-lg font-semibold text-white">{category}</h3>
-      <div className="flex items-center gap-4">
+      <div className="relative flex items-center gap-4">
         <div
           ref={scrollRef}
-          className="flex flex-1 gap-4 overflow-x-auto scroll-smooth py-2 scrollbar-hide"
-          style={{ scrollSnapType: "x mandatory" }}
+          className="flex flex-1 min-w-0 gap-4 overflow-x-auto scroll-smooth py-2 scrollbar-hide"
+          style={{ scrollSnapType: "x mandatory", scrollSnapStop: "always" } as React.CSSProperties}
         >
           {images.map((item, i) => (
             <div
@@ -130,7 +132,7 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
           <button
             type="button"
             onClick={() => scroll("left")}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white hover:bg-white/10"
+            className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-white/30 bg-black/80 text-lg text-white transition-all hover:scale-110 hover:bg-white/20 hover:border-white/60 active:scale-95"
             aria-label={`${category} – predchádzajúci`}
           >
             ←
@@ -138,7 +140,7 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
           <button
             type="button"
             onClick={() => scroll("right")}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white hover:bg-white/10"
+            className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-white/30 bg-black/80 text-lg text-white transition-all hover:scale-110 hover:bg-white/20 hover:border-white/60 active:scale-95"
             aria-label={`${category} – ďalší`}
           >
             →

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IgFeedyGallery } from "./IgFeedyGallery";
 import { WorkCategoryRow } from "./WorkCategoryRow";
 
 export default function ContentPage() {
@@ -16,12 +17,6 @@ export default function ContentPage() {
           preload="auto"
         />
         <div className="absolute inset-0 z-10 bg-gradient-to-br from-black/70 via-black/50 to-black/80" />
-        <div className="absolute left-0 bottom-0 z-10 h-[70%] w-[40%] max-w-md opacity-20">
-          <PlantSilhouette />
-        </div>
-        <div className="absolute right-0 top-1/4 z-10 h-[50%] w-[35%] max-w-sm opacity-20">
-          <StudioSilhouette />
-        </div>
         <div className="relative z-20 mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-wider text-[#ffb400]">
@@ -162,23 +157,64 @@ export default function ContentPage() {
               ]}
             />
             <WorkCategoryRow
-              category="Zdravie"
+              category="Zdravie / Beauty"
               images={[
-                { src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop", alt: "Príroda, wellness" },
-                { src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop", alt: "Jóga" },
-                { src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop", alt: "Meditácia" },
-                { src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop", alt: "Zdravý životný štýl" },
-              ]}
-            />
-            <WorkCategoryRow
-              category="Beauty"
-              images={[
+                { video: encodeURI("/beauty / zdravie/CZ scenar 1 -video-export-2025-11-23T19-57-28.477Z.mp4"), alt: "Zdravie video" },
+                { video: encodeURI("/beauty / zdravie/Exozomy.MP4"), alt: "Exozomy" },
+                { video: encodeURI("/beauty / zdravie/Matka_Galova_1.mp4"), alt: "Matka Galová" },
+                { video: encodeURI("/beauty / zdravie/Nada_Opravene_Reel_1.mp4"), alt: "Nada Reel" },
+                { video: encodeURI("/beauty / zdravie/SK scenar 2-video-export-2025-11-23T21-18-00.754Z.mp4"), alt: "Zdravie video" },
+                { video: encodeURI("/beauty / zdravie/Vianoce SK-video-export-2025-11-23T21-25-18.191Z.mp4"), alt: "Vianoce" },
+                { video: encodeURI("/beauty / zdravie/Brand Feature_Reel_1_V2.mp4"), alt: "Brand Feature" },
+                { video: encodeURI("/beauty / zdravie/Brand Launch_Reel_V1.mp4"), alt: "Brand Launch" },
                 { src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop", alt: "Beauty portrét" },
                 { src: "https://images.unsplash.com/photo-1522335789203-aabd1f54e983?w=400&h=400&fit=crop", alt: "Kozmetika" },
                 { src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop", alt: "Beauty" },
                 { src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=400&fit=crop", alt: "Móda a krása" },
               ]}
             />
+            <WorkCategoryRow
+              category="Ďalšie"
+              images={[
+                { video: encodeURI("/Dalsie/Aftermovie_Reel_02.mp4"), alt: "Aftermovie" },
+                { video: encodeURI("/Dalsie/Brand Feature_Reel_2_V2.mp4"), alt: "Brand Feature" },
+                { video: encodeURI("/Dalsie/Brand Launch_Add_Square_3.mp4"), alt: "Brand Launch" },
+                { video: encodeURI("/Dalsie/Echt_Reel_Broll_04.mp4"), alt: "Echt Reel" },
+                { video: encodeURI("/Dalsie/Lenne_1_Titulky.MP4"), alt: "Lenne" },
+                { video: encodeURI("/Dalsie/Lukas_Strih_Reel_0.mp4"), alt: "Lukáš strih" },
+                { video: encodeURI("/Dalsie/Selfie_Rooms_Preview_01.mp4"), alt: "Selfie Rooms" },
+                { video: encodeURI("/Dalsie/Timeline 1.mp4"), alt: "Timeline" },
+                { video: encodeURI("/Dalsie/UGC Interview_1.mp4"), alt: "UGC Interview" },
+                { video: encodeURI("/Dalsie/UGC Interviews_23_CZ.mp4"), alt: "UGC Interviews" },
+                { video: encodeURI("/Dalsie/What_IF.mp4"), alt: "What IF" },
+              ]}
+            />
+
+            {/* Podkategória: IG Feedy */}
+            <div className="overflow-hidden rounded-2xl border border-[#ffb400]/20 bg-gradient-to-br from-zinc-900 to-zinc-900/80 p-8 md:p-10 shadow-xl shadow-black/30">
+              <div className="mb-2 inline-block">
+                <h3 className="text-2xl font-bold uppercase tracking-tight text-white md:text-3xl">
+                  IG Feedy, ktoré sa nedajú prehliadnuť
+                </h3>
+                <span className="mt-2 block h-0.5 w-20 bg-[#ffb400]" />
+              </div>
+              <div className="mt-6 max-w-2xl space-y-4">
+                <p className="text-base leading-relaxed text-zinc-300 md:text-lg">
+                  Prvý dojem sa nedá zopakovať. Tvoj Instagram nie je len galéria fotiek – je to vizitka
+                  tvojej značky, tvoj vibe a tvoj digitálny domov. Chceš, aby tvoj profil pôsobil prémiovo,
+                  zjednotene a vyvolal v ľuďoch to známe{" "}
+                  <span className="font-semibold text-[#ffb400]">„wow“</span>?
+                </p>
+                <p className="text-base leading-relaxed text-zinc-300 md:text-lg">
+                  Tvoj feed môže žiariť presne takto. Pozri sa, ako meníme chaos na estetický zážitok, od
+                  ktorého sa nedá odtrhnúť zrak.
+                </p>
+              </div>
+              <p className="mt-8 text-sm font-medium uppercase tracking-wider text-[#ffb400]/90">
+                Ukážky našich feedov
+              </p>
+              <IgFeedyGallery />
+            </div>
           </div>
         </div>
       </section>
@@ -263,26 +299,6 @@ function LightningIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  );
-}
-
-function PlantSilhouette() {
-  return (
-    <svg viewBox="0 0 200 300" fill="currentColor" className="text-zinc-800">
-      <path d="M100 20c-20 0-40 30-40 70 0 20 10 40 25 50v80h30v-80c15-10 25-30 25-50 0-40-20-70-40-70z" />
-      <path d="M60 140c-15 20-25 50-25 80 0 30 10 50 30 60v20h70v-20c20-10 30-30 30-60 0-30-10-60-25-80-5 5-15 10-25 10s-20-5-25-10z" />
-    </svg>
-  );
-}
-
-function StudioSilhouette() {
-  return (
-    <svg viewBox="0 0 200 200" fill="currentColor" className="text-zinc-800">
-      <rect x="85" y="40" width="30" height="120" rx="4" />
-      <rect x="70" y="155" width="60" height="8" rx="2" />
-      <rect x="40" y="50" width="80" height="50" rx="4" opacity="0.8" />
-      <circle cx="100" cy="75" r="15" opacity="0.9" />
     </svg>
   );
 }
