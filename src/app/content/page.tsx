@@ -242,30 +242,56 @@ export default function ContentPage() {
         </div>
       </section>
 
-      {/* Ako Pracujeme – timeline */}
+      {/* Ako Tvoríme Obsah – zigzag, veľké čísla, netradičný flow */}
       <section className="border-t border-white/5 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="inline-block text-3xl font-bold text-white">
-            Ako Pracujeme
-            <span className="mt-2 block h-1 w-16 bg-[#ffb400]" />
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#ffb400]">
+            Proces
+          </p>
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
+            Ako tvoríme obsah, ktorý zaberá
           </h2>
-          <p className="mt-2 text-white/70">Proces od prvého kontaktu po spustené kampane.</p>
-          <div className="relative mt-12 pl-8 md:pl-10">
-            <div className="absolute left-[11px] top-0 bottom-0 w-0.5 bg-[#ffb400] md:left-[13px]" />
+          <p className="mt-5 max-w-xl text-lg text-white/80 md:text-xl">
+            Žiadna vata, len výsledky. Štyri fázy k dokonalosti.
+          </p>
+
+          <div className="mt-16 space-y-0">
             {[
-              { num: "01", title: "Audit & Setup", desc: "Analýza vášho účtu, cieľov a konkrencie. Nastavenie nástrojov a baseline metrík." },
-              { num: "02", title: "Kreatívny koncept", desc: "Návrh vizuálneho štýlu, tónu a formátov. Schválenie s vami pred produkciou." },
-              { num: "03", title: "Produkcia", desc: "Natáčanie a tvorba obsahu. Strih, grafika, titulky a prispôsobenie pre platformy." },
-              { num: "04", title: "Optimalizácia", desc: "Publikovanie, A/B testy a neustála optimalizácia na základe dát." },
-            ].map((step, i) => (
-              <div key={i} className="relative pb-12 last:pb-0">
-                <div className="absolute -left-8 flex h-6 w-6 items-center justify-center rounded-full bg-[#ffb400] text-xs font-bold text-black md:-left-10 md:h-7 md:w-7">
-                  {step.num}
+              { num: "01", title: "Analýza a ciele", desc: "Poznáme váš stav aj ambície. Nastavíme systém, ktorý má hlavu a pätu." },
+              { num: "02", title: "Kreatíva a vibe", desc: "Navrhneme vizuál a tón, ktorý sedí vašej DNA. Pred produkciou máte vo všetkom jasno." },
+              { num: "03", title: "Realizácia", desc: "Kamery bežia, strih dodáva energiu. Tvoríme formáty, ktoré na sociálnych sieťach vyčnievajú." },
+              { num: "04", title: "Dáta a rast", desc: "Sledujeme, čo funguje, a výkonnosť neustále stupňujeme. Každé rozhodnutie opierame o čísla." },
+            ].map((step, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <div
+                  key={i}
+                  className={`group relative flex flex-col gap-6 py-10 md:flex-row md:items-center md:gap-12 md:py-14 ${!isLeft ? "md:flex-row-reverse" : ""}`}
+                >
+                  {/* Obsah – title + desc */}
+                  <div className={`flex-1 md:max-w-[55%] ${isLeft ? "md:pr-8" : "md:pl-8 md:text-right"}`}>
+                    <span className="inline-block text-xs font-bold tracking-[0.25em] text-[#ffb400]">
+                      FÁZA {step.num}
+                    </span>
+                    <h3 className="mt-2 text-2xl font-bold text-white md:text-3xl">
+                      {step.title}
+                    </h3>
+                    <p className="mt-4 text-base leading-relaxed text-white/90 md:text-lg">
+                      {step.desc}
+                    </p>
+                  </div>
+                  {/* Veľké číslo ako vizuál */}
+                  <div className={`relative flex shrink-0 items-center justify-center md:w-[44%] ${isLeft ? "md:justify-end" : "md:justify-start"}`}>
+                    <span
+                      className="select-none text-[4rem] font-bold leading-none text-[#ffb400]/[0.12] transition-colors group-hover:text-[#ffb400]/[0.18] md:text-[5rem]"
+                      aria-hidden
+                    >
+                      {step.num}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white">{step.title}</h3>
-                <p className="mt-1 text-sm text-white/80">{step.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
