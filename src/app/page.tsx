@@ -176,64 +176,173 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Premieňame centy na eurá */}
-      <section className="border-t border-white/5 px-6 py-16 md:py-24">
+      {/* Premieňame centy na eurá – nadčasovo moderné, výborná čitateľnosť */}
+      <section className="border-t border-white/5 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
-                PREMIEŇAME CENTY <span className="text-[#ffb400]">NA EURA</span>
-              </h2>
-              <p className="mt-4 text-zinc-400">
-                PPC nie je len o tom, koľko miniete, ale o tom, ako efektívne. Naše kampane sú od
-                začiatočníkov po profíkov. Od desiatok eur po tisíce eur, naše kampane vám prinášajú
-                výsledky, ktoré hovoria samy za seba.
+          <div className="grid gap-14 lg:grid-cols-2 lg:gap-20 lg:items-start">
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#ffb400]/80">
+                PPC
               </p>
-              <ul className="mt-6 space-y-3">
-                <li className="flex items-center gap-2 text-white">
-                  <span className="h-2 w-2 shrink-0 rounded-sm bg-[#ffb400]" /> Pravidelné výsledky
-                </li>
-                <li className="flex items-center gap-2 text-white">
-                  <span className="h-2 w-2 shrink-0 rounded-sm bg-[#ffb400]" /> A/B Testing 2.0
-                </li>
-              </ul>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl md:leading-[1.2]">
+                Premieňame centy <span className="text-[#ffb400]">na eurá</span>
+              </h2>
+              <p className="mt-4 text-base leading-[1.75] text-white/90 md:text-lg">
+                PPC stratégie, ktoré nekončia pri kliknutí, ale pri konverzii.
+              </p>
+              <p className="mt-5 text-[15px] leading-[1.8] text-white/80 md:text-base">
+                PPC reklama v našom podaní nie je lotéria. Je to presne kalibrovaný stroj na rast
+                vášho biznisu. Či už začínate s rozpočtom v desiatkach eur, alebo spravujete
+                tisícové kampane, náš cieľ zostáva rovnaký: maximalizovať návratnosť každej
+                investovanej mince (ROAS).
+              </p>
+              <div className="mt-10 border-t border-white/[0.06] pt-8">
+                <h3 className="text-base font-semibold tracking-tight text-white md:text-lg">
+                  V čom spočíva naša sila?
+                </h3>
+                <ul className="mt-6 space-y-7">
+                  <li className="flex gap-4">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ffb400]/90" />
+                    <div>
+                      <p className="font-medium text-white">Pravidelné výsledky, nie náhody</p>
+                      <p className="mt-2 text-[15px] leading-[1.7] text-white/75">
+                        Nečakáme na zázrak. Kampane neustále monitorujeme a ladíme v reálnom čase,
+                        aby sme eliminovali neefektívne výdavky a posilnili to, čo zarába.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ffb400]/90" />
+                    <div>
+                      <p className="font-medium text-white">A/B Testing 2.0</p>
+                      <p className="mt-2 text-[15px] leading-[1.7] text-white/75">
+                        Testujeme všetko. Od farby tlačidla cez texty headlinov až po cieľové
+                        publiká. Naše rozhodnutia sú založené na tvrdých dátach, nie na pocitoch.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ffb400]/90" />
+                    <div>
+                      <p className="font-medium text-white">Škálovanie s rozumom</p>
+                      <p className="mt-2 text-[15px] leading-[1.7] text-white/75">
+                        Keď nájdeme víťaznú kombináciu, vieme ju bezpečne škálovať. Z desiatok eur
+                        na tisíce tak, aby efektivita rástla spolu s vaším obratom.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#ffb400]/90" />
+                    <div>
+                      <p className="font-medium text-white">Transparentnosť nadovšetko</p>
+                      <p className="mt-2 text-[15px] leading-[1.7] text-white/75">
+                        Presne viete, kam ide každý cent. Reportujeme jasne a zameriavame sa na
+                        metriky s reálnym dopadom na váš zisk – nie na „páčiky“.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <blockquote className="mt-10 border-l-2 border-[#ffb400]/70 pl-6 text-[15px] leading-[1.75] italic text-white/85 md:text-base">
+                „Vaša reklama by nemala byť nákladom, ale vašou najlepšou investíciou.“ S BeCode
+                získate partnera, ktorý stráži váš rozpočet, akoby bol jeho vlastný.
+              </blockquote>
             </div>
-            <div className="rounded-xl border border-[#ffb400]/30 bg-[#262626] p-6">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-zinc-400">Case Study: E-commerce Klient</span>
-                <span className="rounded bg-emerald-600/20 px-2 py-1 text-xs font-medium text-emerald-400">
+            <div className="flex w-full max-w-md flex-col gap-6 shrink-0 self-start lg:max-w-sm">
+              {/* Case Study */}
+              <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-900/90 to-zinc-900/50 p-7 shadow-xl lg:p-8">
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#ffb400]/70">
+                  Case Study
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-white">
+                  E-commerce Klient
+                </h3>
+                <span className="mt-3 inline-block rounded-full bg-emerald-500/15 px-2.5 py-1 text-[11px] font-medium text-emerald-400">
                   SUCCESS
                 </span>
-              </div>
-              <p className="mt-4 text-xs text-zinc-500">TIME | 2021 | 2023 | 2025</p>
-              <div className="mt-4 space-y-4">
-                <div>
-                  <div className="h-3 w-full overflow-hidden rounded-full bg-zinc-700">
-                    <div
-                      className="h-full rounded-full bg-[#ffb400]"
-                      style={{ width: "79%" }}
-                    />
+                <p className="mt-4 text-xs text-white/50">2021 → 2023 → 2025</p>
+                <div className="mt-6 space-y-5">
+                  <div>
+                    <div className="h-2 w-full overflow-hidden rounded-full bg-white/[0.06]">
+                      <div
+                        className="h-full rounded-full bg-[#ffb400]/90"
+                        style={{ width: "79%" }}
+                      />
+                    </div>
+                    <p className="mt-2 text-sm font-medium text-white/90">ROI 7.9x</p>
                   </div>
-                  <p className="mt-1 text-sm text-[#ffb400]">ROI | 7.9x</p>
-                </div>
-                <div>
-                  <div className="h-3 w-full overflow-hidden rounded-full bg-zinc-700">
-                    <div
-                      className="h-full rounded-full bg-blue-500"
-                      style={{ width: "100%" }}
-                    />
+                  <div>
+                    <div className="h-2 w-full overflow-hidden rounded-full bg-white/[0.06]">
+                      <div
+                        className="h-full rounded-full bg-blue-400/90"
+                        style={{ width: "100%" }}
+                      />
+                    </div>
+                    <p className="mt-2 text-sm font-medium text-blue-300/90">Revenue +200%</p>
                   </div>
-                  <p className="mt-1 text-sm text-blue-400">Revenue | +200%</p>
+                </div>
+                <div className="mt-6 flex gap-3">
+                  <div className="min-w-0 flex-1 rounded-xl border border-white/[0.06] bg-white/[0.03] py-4 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-white/50">
+                      ROAS
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-white">2.1x</p>
+                  </div>
+                  <div className="min-w-0 flex-1 rounded-xl border border-[#ffb400]/25 bg-[#ffb400]/5 py-4 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-[#ffb400]/80">
+                      ROI
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-[#ffb400]">
+                      8.4x
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="mt-6 flex gap-4">
-                <div className="flex-1 rounded-lg border border-white/10 bg-zinc-800/50 p-4 text-center">
-                  <p className="text-xs text-zinc-400">ROAS</p>
-                  <p className="text-2xl font-bold text-white">2.1x</p>
+
+              {/* PPC v číslach – prehľad metrík */}
+              <div className="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-900/90 to-zinc-900/50 p-7 shadow-xl lg:p-8">
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#ffb400]/70">
+                  PPC v číslach
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-white">
+                  Naše kampane v praxi
+                </h3>
+                <p className="mt-2 text-xs text-white/50">Priemer za posledných 12 mesiacov</p>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-4 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-white/50">
+                      Priem. ROAS
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-white">4.2x</p>
+                    <p className="mt-0.5 text-[10px] text-emerald-400/90">↑ 0.8x YoY</p>
+                  </div>
+                  <div className="rounded-xl border border-[#ffb400]/25 bg-[#ffb400]/5 px-4 py-4 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-[#ffb400]/80">
+                      Priem. ROI
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-[#ffb400]">
+                      6.1x
+                    </p>
+                    <p className="mt-0.5 text-[10px] text-emerald-400/90">↑ 1.2x YoY</p>
+                  </div>
+                  <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-4 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-white/50">
+                      CPC ↓
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-white">0.42 €</p>
+                    <p className="mt-0.5 text-[10px] text-emerald-400/90">−18% YoY</p>
+                  </div>
+                  <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-4 text-center">
+                    <p className="text-[11px] font-medium uppercase tracking-wider text-white/50">
+                      Konverzie
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tracking-tight text-white">+127%</p>
+                    <p className="mt-0.5 text-[10px] text-emerald-400/90">vs. baseline</p>
+                  </div>
                 </div>
-                <div className="flex-1 rounded-lg border border-[#ffb400]/50 bg-zinc-800/50 p-4 text-center">
-                  <p className="text-xs text-zinc-400">ROI</p>
-                  <p className="text-2xl font-bold text-[#ffb400]">8.4x</p>
+                <div className="mt-5 flex items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3">
+                  <span className="text-xs text-white/60">A/B testov za mesiac</span>
+                  <span className="text-lg font-semibold text-white">24+</span>
                 </div>
               </div>
             </div>
