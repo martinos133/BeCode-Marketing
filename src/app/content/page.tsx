@@ -5,15 +5,24 @@ export default function ContentPage() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero – tmavé pozadie, siluety, text vľavo */}
-      <section className="relative overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-black to-black" />
-        <div className="absolute left-0 bottom-0 h-[70%] w-[40%] max-w-md opacity-20">
+      <section className="relative min-h-[70vh] overflow-hidden border-b border-white/5">
+        <video
+          src={encodeURI("/BeCode Hero Trailer_4K_V2.mp4")}
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-black/70 via-black/50 to-black/80" />
+        <div className="absolute left-0 bottom-0 z-10 h-[70%] w-[40%] max-w-md opacity-20">
           <PlantSilhouette />
         </div>
-        <div className="absolute right-0 top-1/4 h-[50%] w-[35%] max-w-sm opacity-20">
+        <div className="absolute right-0 top-1/4 z-10 h-[50%] w-[35%] max-w-sm opacity-20">
           <StudioSilhouette />
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="relative z-20 mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-wider text-[#ffb400]">
               O Content & Social Media
@@ -45,7 +54,7 @@ export default function ContentPage() {
           </div>
         </div>
         {/* Metriky – 4 stĺpce */}
-        <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-8 border-t border-white/10 px-6 py-12 md:grid-cols-4 md:px-0">
+        <div className="relative z-20 mx-auto grid max-w-5xl grid-cols-2 gap-8 border-t border-white/10 px-6 py-12 md:grid-cols-4 md:px-0">
           <div className="text-center">
             <p className="text-3xl font-bold text-white md:text-4xl">15M+</p>
             <p className="mt-1 text-sm text-white/70">Zobrazení</p>
@@ -133,18 +142,23 @@ export default function ContentPage() {
                 { video: "/InFestaConTavolo_Reels_Prew_01.mp4", alt: "Gastro video" },
                 { video: "/Burrata_Recept_Reel_03.mp4", alt: "Burrata recept" },
                 { video: encodeURI("/🤩 TIRAMISU DI PISTACCHIO PODĽA TAVOLO 🔥👉 Potrebuješ-500g mascarpone 5-6 žĺtkov 3-4 lyžice kry.mp4"), alt: "Tiramisu di Pistacchio" },
-                { src: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=400&h=400&fit=crop", alt: "Gastro projekt" },
+                { video: "/Slavia_Drink_01.mp4", alt: "Slavia Drink" },
                 { video: "/reelsko_chaos_final.mp4", alt: "Reelsko chaos" },
                 { video: "/Platz_DomUmenia_Reel_01.mp4", alt: "Platz Dom Umenia" },
+                { video: "/December_BRGR_Final.mp4", alt: "December BRGR" },
+                { video: encodeURI("/Prve Video_4.mp4"), alt: "Prvé video" },
+                { video: encodeURI("/poke kacka s logom.mp4"), alt: "Poke kačka s logom" },
               ]}
             />
             <WorkCategoryRow
-              category="Sport"
+              category="Šport"
               images={[
-                { src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=400&fit=crop", alt: "Fitness tréning" },
-                { src: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=400&fit=crop", alt: "Cvičenie" },
-                { src: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop", alt: "Posilňovňa" },
-                { src: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=400&fit=crop", alt: "Šport" },
+                { video: encodeURI("/sport/A ako riešiš problém preplnených fitiek ty 🤣💪.mp4"), alt: "Fitky" },
+                { video: "/sport/Captions_26E160.MP4", alt: "Šport video" },
+                { video: "/sport/Captions_FC6C84.MP4", alt: "Šport video" },
+                { video: "/sport/Chlapi_Reel_01.mp4", alt: "Chlapi Reel" },
+                { video: encodeURI("/sport/Stále trčíš v tom istom fitku Čo tak zmena 🤔Fitcentrum Šport je obľúbené fitko v centre mesta. .mp4"), alt: "Fitcentrum Šport" },
+                { video: encodeURI("/sport/Tento typ ľudí 🤣😤.mp4"), alt: "Fitko" },
               ]}
             />
             <WorkCategoryRow

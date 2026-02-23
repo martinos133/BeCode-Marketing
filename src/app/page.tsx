@@ -55,8 +55,17 @@ export default function Home() {
       )}
 
       {/* Hero */}
-      <section className="px-6 pb-20 pt-12 md:pt-16">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative min-h-[500px] overflow-hidden px-6 pb-20 pt-12 md:pt-16 md:min-h-[600px]">
+        <video
+          src={encodeURI("/BeCode Hero Trailer_4K_V2.mov")}
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative mx-auto max-w-4xl text-center">
           <div className="mb-8 inline-block rounded-lg border border-[#ffb400] px-4 py-2">
             <span className="text-xs font-medium uppercase tracking-wider text-zinc-300">
               Agentúra pre B2B marketing roku 2024
@@ -141,6 +150,10 @@ export default function Home() {
                       muted
                       loop
                       autoPlay
+                      onEnded={(e) => {
+                        e.currentTarget.currentTime = 0;
+                        e.currentTarget.play();
+                      }}
                     />
                   ) : null}
                   <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-4">

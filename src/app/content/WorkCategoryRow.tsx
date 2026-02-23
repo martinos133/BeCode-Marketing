@@ -32,7 +32,7 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
     if (!scrollRef.current) return;
     const el = scrollRef.current;
     const firstChild = el.querySelector("[data-carousel-item]") as HTMLElement | null;
-    const itemWidth = firstChild ? firstChild.offsetWidth + 16 : 400; // 16px gap
+    const itemWidth = firstChild ? firstChild.offsetWidth + 16 : 400; // 16px = gap
     const step = dir === "left" ? -itemWidth : itemWidth;
     const maxScroll = el.scrollWidth - el.clientWidth;
 
@@ -40,9 +40,10 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
 
     const newScroll = el.scrollLeft + step;
 
-    if (newScroll >= maxScroll - 1) {
+    // Obaliť len keď skutočne prekročíme hranicu – inak normálne scrollovať
+    if (dir === "right" && newScroll > maxScroll) {
       el.scrollTo({ left: 0, behavior: "smooth" });
-    } else if (newScroll <= 0) {
+    } else if (dir === "left" && newScroll < 0) {
       el.scrollTo({ left: maxScroll, behavior: "smooth" });
     } else {
       el.scrollBy({ left: step, behavior: "smooth" });
@@ -108,6 +109,10 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
                   muted
                   loop
                   autoPlay
+                  onEnded={(e) => {
+                    e.currentTarget.currentTime = 0;
+                    e.currentTarget.play();
+                  }}
                 />
               ) : (
                 <Image
@@ -121,7 +126,7 @@ export function WorkCategoryRow({ category, images }: WorkCategoryRowProps) {
             </div>
           ))}
         </div>
-        <div className="hidden shrink-0 flex-col gap-2 md:flex">
+        <div className="flex shrink-0 flex-col gap-2">
           <button
             type="button"
             onClick={() => scroll("left")}
