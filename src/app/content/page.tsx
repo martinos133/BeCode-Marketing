@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { GaleriaGallery } from "./GaleriaGallery";
 import { IgFeedyGallery } from "./IgFeedyGallery";
@@ -237,6 +238,62 @@ export default function ContentPage() {
                 </p>
               </div>
               <GaleriaGallery />
+            </div>
+
+            {/* Podkategória: Výsledky – nadštandardný, luxusný blok */}
+            <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-900/95 to-black/40 px-8 py-12 shadow-2xl md:px-14 md:py-16">
+              <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-[#ffb400]/90">
+                Výsledky
+              </p>
+              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white md:text-3xl md:tracking-tight md:leading-tight">
+                Keď čísla tvoria príbeh
+              </h3>
+              <div className="mt-8 max-w-xl">
+                <p className="text-[15px] leading-[1.7] text-zinc-400 md:text-base">
+                  Kvalitný obsah je východisko. Úspech znamená, že sa dostane k ľuďom a skutočne
+                  zapôsobí – dosah, zapojenie, konverzie. Cieľavedomé umiestnenie obsahu tam, kde
+                  vaše publikum žije.
+                </p>
+              </div>
+              <ul className="mt-10 space-y-6 border-t border-white/[0.06] pt-10 md:mt-14 md:space-y-7 md:pt-14">
+                {[
+                  "Organický dosah v rádoch stoviek percent, merateľný a udržateľný.",
+                  "Komunita, ktorá so značkou skutočne žije a reaguje.",
+                  "Efektivita premieňajúca pozornosť na zákazníkov.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-5">
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#ffb400]/50 bg-[#ffb400]/10 text-[11px] font-semibold tracking-wide text-[#ffb400]">
+                      {i + 1}
+                    </span>
+                    <span className="text-[15px] leading-[1.65] text-white/95 md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-12 border-t border-white/[0.06] pt-8 text-[11px] font-medium uppercase tracking-[0.25em] text-[#ffb400]/70 md:mt-14 md:pt-10">
+                Ukážky z praxe
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-8">
+                <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                  <Image
+                    src="/vysledky/Vysledky.png"
+                    alt="Ukážka výsledkov – metriky a dosah"
+                    width={800}
+                    height={600}
+                    className="w-full object-contain"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                  <Image
+                    src="/vysledky/vysledok.png"
+                    alt="Ukážka výsledkov – metriky dosahu, interakcie, sledovania a kliknutia"
+                    width={800}
+                    height={600}
+                    className="w-full object-contain"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
