@@ -134,8 +134,7 @@ export default function ContentPage() {
             <WorkCategoryRow
               category="Gastro"
               images={[
-                { video: "/InFestaConTavolo_Reels_Prew_01.mp4", alt: "Gastro video" },
-                { video: "/Burrata_Recept_Reel_03.mp4", alt: "Burrata recept" },
+                { video: "/Burrata_Recept_Reel_03.mp4", alt: "Gastro video" },
                 { video: encodeURI("/🤩 TIRAMISU DI PISTACCHIO PODĽA TAVOLO 🔥👉 Potrebuješ-500g mascarpone 5-6 žĺtkov 3-4 lyžice kry.mp4"), alt: "Tiramisu di Pistacchio" },
                 { video: "/Slavia_Drink_01.mp4", alt: "Slavia Drink" },
                 { video: "/reelsko_chaos_final.mp4", alt: "Reelsko chaos" },
@@ -150,7 +149,6 @@ export default function ContentPage() {
               images={[
                 { video: encodeURI("/sport/A ako riešiš problém preplnených fitiek ty 🤣💪.mp4"), alt: "Fitky" },
                 { video: "/sport/Captions_26E160.MP4", alt: "Šport video" },
-                { video: "/sport/Captions_FC6C84.MP4", alt: "Šport video" },
                 { video: "/sport/Chlapi_Reel_01.mp4", alt: "Chlapi Reel" },
                 { video: encodeURI("/sport/Stále trčíš v tom istom fitku Čo tak zmena 🤔Fitcentrum Šport je obľúbené fitko v centre mesta. .mp4"), alt: "Fitcentrum Šport" },
                 { video: encodeURI("/sport/Tento typ ľudí 🤣😤.mp4"), alt: "Fitko" },

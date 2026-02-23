@@ -57,7 +57,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-[500px] overflow-hidden px-6 pb-20 pt-12 md:pt-16 md:min-h-[600px]">
         <video
-          src={encodeURI("/BeCode Hero Trailer_4K_V2.mov")}
+          src={encodeURI("/BeCode Hero Trailer_4K_V2.mp4")}
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
